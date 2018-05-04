@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = ViewController()
+        let nc = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = nc
         
         return true
     }
