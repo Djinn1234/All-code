@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Title"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         view.backgroundColor = .white
     }
