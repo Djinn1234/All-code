@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
     
     let cellID = "cellID"
     
-    let list = ["Name 01", "Name 02", "Name 03"]
+    let list = ["Name 01", "Name 02", "Name 03", "Name 04"]
     
 
     override func viewDidLoad() {
@@ -40,4 +40,3 @@ class ViewController: UITableViewController {
     }
 
 }
-
