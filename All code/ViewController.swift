@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UITableViewController {
     
     let cellID = "cellID"
+    let cellSubtitleID = "cellSubtitleID"
     
     let list = ["Name 01", "Name 02", "Name 03", "Name 04"]
+    let detailList = ["00001", "00002", "00003", "00004"]
     
 
     override func viewDidLoad() {
@@ -31,12 +33,15 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
-        cell.textLabel?.text = list[indexPath.row]
-        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        
-        return cell
-    }
+        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellID)
 
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellSubtitleID)
+        cell?.selectionStyle = .none
+        
+        cell?.textLabel?.text = list[indexPath.row]
+        cell?.detailTextLabel?.text = detailList[indexPath.row]
+        
+        return cell!
+    }
+    
 }
