@@ -15,8 +15,8 @@ class ViewController: UITableViewController {
     
     let list = ["Name 01", "Name 02", "Name 03", "Name 04"]
     let detailList = ["00001", "00002", "00003", "00004"]
+    let imageList = ["coffee", "raindrop", "squirrel", "squirrel-2"]
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,8 +38,10 @@ class ViewController: UITableViewController {
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellSubtitleID)
         cell?.selectionStyle = .none
         
+        cell?.imageView?.image = UIImage(named: imageList[indexPath.row])
         cell?.textLabel?.text = list[indexPath.row]
         cell?.detailTextLabel?.text = detailList[indexPath.row]
+        cell?.accessoryType = .detailDisclosureButton
         
         return cell!
     }
