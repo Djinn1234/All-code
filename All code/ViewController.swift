@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellID)
         
-        cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
+        cell = UITableViewCell(style: .value2, reuseIdentifier: cellID)
         cell?.selectionStyle = .none
         
         cell?.imageView?.image = UIImage(named: imageList[indexPath.row])
