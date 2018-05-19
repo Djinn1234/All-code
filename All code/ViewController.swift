@@ -27,12 +27,13 @@ class ViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row % 2 == 0 {
-            let altCellColor: UIColor? = UIColor(white: 0.7, alpha: 0.1)
-            cell.backgroundColor = altCellColor
-        }
-    }
+    // Uncomment this block of code to achieve alternating cell colors.
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row % 2 == 0 {
+//            let altCellColor: UIColor? = UIColor(white: 0.7, alpha: 0.5)
+//            cell.backgroundColor = altCellColor
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
