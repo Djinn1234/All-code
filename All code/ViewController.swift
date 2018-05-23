@@ -34,7 +34,7 @@ class ViewController: UITableViewController {
 //            cell.backgroundColor = altCellColor
 //        }
 //    }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -42,15 +42,23 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellID)
         
-        cell = UITableViewCell(style: .value2, reuseIdentifier: cellID)
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
         cell?.selectionStyle = .none
         
         cell?.imageView?.image = UIImage(named: imageList[indexPath.row])
         cell?.textLabel?.text = list[indexPath.row]
         cell?.detailTextLabel?.text = detailList[indexPath.row]
-        cell?.accessoryType = .detailDisclosureButton
+        
+        let switchObj = UISwitch(frame: CGRect(x: 1.0, y: 1.0, width: 20.0, height: 20.0))
+        switchObj.isOn = false
+        switchObj.addTarget(self, action: #selector(toggle(_:)), for: .valueChanged)
+        cell?.accessoryView = switchObj
         
         return cell!
+    }
+    
+    @objc func toggle(_ sender: UISwitch) {
+        print("Switch on!")
     }
     
 }
