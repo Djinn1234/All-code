@@ -49,16 +49,16 @@ class ViewController: UITableViewController {
         cell?.textLabel?.text = list[indexPath.row]
         cell?.detailTextLabel?.text = detailList[indexPath.row]
         
-        let switchObj = UISwitch(frame: CGRect(x: 1.0, y: 1.0, width: 20.0, height: 20.0))
+        let switchObj = UISwitch(frame: CGRect(x: 1, y: 1, width: 20, height: 20))
         switchObj.isOn = false
-        switchObj.addTarget(self, action: #selector(toggle(_:)), for: .valueChanged)
+        switchObj.addTarget(self, action: #selector(toggel(_:)), for: .valueChanged)
         cell?.accessoryView = switchObj
         
         return cell!
     }
     
-    @objc func toggle(_ sender: UISwitch) {
-        print("Switch on!")
+    @objc func toggel(_ sender: UISwitch) {
+        print("Switch!!")
     }
     
 }
