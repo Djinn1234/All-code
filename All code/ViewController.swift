@@ -58,7 +58,6 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
         let newVC = NewViewController()
         navigationController?.pushViewController(newVC, animated: true)
     }
