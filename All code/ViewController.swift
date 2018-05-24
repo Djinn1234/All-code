@@ -12,15 +12,17 @@ class ViewController: UITableViewController {
     
     let cellID = "cellID"
     
-    let list = ["Coffee", "Raindrops", "Squirrel One", "Squirrel Two"]
-    let detailList = ["Cups of coffee 20!", "Rainy day!", "Squirrels!", "Squirrels again!"]
-    let imageList = ["coffee", "raindrop", "squirrel", "squirrel-2"]
+    var list = ["Coffee", "Raindrops", "Squirrel One", "Squirrel Two"]
+    var detailList = ["Cups of coffee 20!", "Rainy day!", "Squirrels!", "Squirrels again!"]
+    var imageList = ["coffee", "raindrop", "squirrel", "squirrel-2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Title"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationItem.rightBarButtonItem = editButtonItem
         
         view.backgroundColor = .white
         
@@ -57,11 +59,18 @@ class ViewController: UITableViewController {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            self.list.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newVC = NewViewController()
         navigationController?.pushViewController(newVC, animated: true)
     }
-
     
     @objc func toggel(_ sender: UISwitch) {
         print("Switch!!")
