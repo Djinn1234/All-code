@@ -51,6 +51,7 @@ class ViewController: UITableViewController {
         cell?.textLabel?.text = list[indexPath.row]
         cell?.detailTextLabel?.text = detailList[indexPath.row]
         
+        
         let switchObj = UISwitch(frame: CGRect(x: 1, y: 1, width: 20, height: 20))
         switchObj.isOn = false
         switchObj.addTarget(self, action: #selector(toggel(_:)), for: .valueChanged)
@@ -68,8 +69,13 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newVC = NewViewController()
-        navigationController?.pushViewController(newVC, animated: true)
+//        let newVC = NewViewController()
+//        navigationController?.pushViewController(newVC, animated: true)
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        print(cell?.detailTextLabel?.text ?? "")
+        
     }
     
     @objc func toggel(_ sender: UISwitch) {
@@ -77,3 +83,14 @@ class ViewController: UITableViewController {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
