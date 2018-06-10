@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     func setupViews() {
-        let screenHeight = UIScreen.main.bounds.height
+        //let screenHeight = UIScreen.main.bounds.height
         
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
