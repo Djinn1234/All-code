@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         return vc
     }()
     
-    lazy var blueVC: RedViewController = {
-        let vc = RedViewController()
+    lazy var blueVC: BlueViewController = {
+        let vc = BlueViewController()
         self.addAsChildVC(childVC: vc)
         return vc
     }()
@@ -34,7 +34,6 @@ class ViewController: UIViewController {
     }
     
     func setupViews() {
-        //let screenHeight = UIScreen.main.bounds.height
         
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -46,10 +45,10 @@ class ViewController: UIViewController {
         view.addSubview(segmentedControl)
         
         NSLayoutConstraint.activate([
-            containerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            containerView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            containerView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
-            containerView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            containerView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            containerView.widthAnchor.constraint(equalTo: view.widthAnchor),
             
             segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             segmentedControl.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
